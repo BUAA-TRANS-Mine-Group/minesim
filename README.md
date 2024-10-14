@@ -1,6 +1,6 @@
 # Jekyll Doc Theme
 
-Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
+Go to [the website](https://buaa-trans-mine-group.github.io/minesim/) for detailed information and demo.
 
 ## Running locally
 
@@ -11,8 +11,8 @@ You need Ruby and gem before starting, then:
 gem install bundler
 
 # clone the project
-git clone https://github.com/aksakalli/jekyll-doc-theme.git
-cd jekyll-doc-theme
+git clone https://github.com/buaa-trans-mine-group/minesim.git
+cd minesim
 
 # install dependencies
 bundle install
@@ -40,13 +40,13 @@ that serves files from Nginx for better performance in production.
 Build the image for your site's `JEKYLL_BASEURL`:
 
 ```
-docker build --build-arg JEKYLL_BASEURL="/your-base/url" -t jekyll-doc-theme .
+docker build --build-arg JEKYLL_BASEURL="/your-base/url" -t minesim .
 ```
 
 (or leave it empty for root: `JEKYLL_BASEURL=""`) and serve it:
 
 ```
-docker run -p 8080:80 jekyll-doc-theme
+docker run -p 8080:80 minesim
 ```
 
 ## Github Pages
@@ -64,14 +64,14 @@ gem "github-pages", group: :jekyll_plugins
 ```
 # Configure the remote_theme plugin with the gh-pages branch
 # or the specific tag
-remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+remote_theme: buaa-trans-mine-group/minesim@gh-pages   
 ```
 
 ### Theme Assets
 
 Files from your project will override any theme file with the same name.  For example, the most comment use case for this, would be to modify your sites theme or colors.   To do this, the following steps should be taken:
 
-1) Copy the contents of the `aksakalli/jekyll-doc-theme/asset/css/main.scss` to your own project (maintaining folder structure)
+1) Copy the contents of the `buaa-trans-mine-group/minesim/asset/css/main.scss` to your own project (maintaining folder structure)
 2) Modify the variables you wish to use prior to the import statements, for example:
 
 ```
@@ -93,7 +93,7 @@ $container-large-desktop: (900px + $grid-gutter-width) !default;
 
   "syntax-highlighting",
   "typeahead",
-  "jekyll-doc-theme"
+  "minesim"
 ;
 
 // More custom overrides.
