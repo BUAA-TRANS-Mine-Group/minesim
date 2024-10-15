@@ -1,8 +1,8 @@
 # Site settings
 title: MineSim
-email: your-email@domain.com
+email: chenzhifa@buaa.edu.com
 description: >
-  MineSim, an open-source, scenariobased simulation test system specifically developed for planning tasks in autonomous trucks operating in open-pit mines.
+  MineSim, an open-source, scenariobased simulation test system specifically developed for planning tasks of autonomous trucks in open-pit mines.
 lang: en-US
 
 baseurl: "/minesim" # the subpath of your site, e.g. /blog/

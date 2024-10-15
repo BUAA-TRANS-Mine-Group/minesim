@@ -3,21 +3,27 @@
 ---
 @charset "utf-8";
 
-// 使用 Sass 模块系统
+// 使用 Sass 模块系统加载 Sass 内置模块（例如颜色处理）
 @use "sass:color";
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
+// 这里通过条件判断引入 Bootswatch 主题变量
 @import
+  // 引入 Bootswatch 主题的变量
   {% if site.bootwatch %}
     "bootswatch/{{ site.bootwatch | downcase }}/variables",
   {% endif %}
 
+  // 引入 Bootstrap 核心样式
   "bootstrap",
 
+  // 如果定义了 Bootswatch 主题，继续引入 Bootswatch 的自定义样式  
   {% if site.bootwatch %}
-    "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",
+    "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",// 引入 Bootswatch 样式
   {% endif %}
 
+  // 引入代码高亮的样式
   "syntax-highlighting",
+  // 自定义 MineSim 样式文件
   "minesim";

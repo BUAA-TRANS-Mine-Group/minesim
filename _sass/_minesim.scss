@@ -1,63 +1,109 @@
+// ---
+// # Only the main Sass file needs front matter (the dashes are enough)
+// ---
+// @charset "utf-8"; // 指定字符编码为 UTF-8
 
+// // 使用 Sass 模块系统
+// @use "sass:color";
+
+// // 导入部分
+// @import
+//   {% if site.bootwatch %}
+//     "bootswatch/{{ site.bootwatch | downcase }}/variables",
+//   {% endif %}
+
+//   "bootstrap",
+
+//   {% if site.bootwatch %}
+//     "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",
+//   {% endif %}
+
+//   "syntax-highlighting",
+//   "minesim";
+
+
+// 自定义样式部分
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative; // 设置 HTML 元素的相对定位，确保内容布局相对浏览器窗口进行调整
+  min-height: 100%;   // 设置页面最小高度为 100%，以确保内容占满整个页面高度
+}
+
+body {
+  padding-top: $navbar-height + $navbar-margin-bottom; // 给 body 添加顶部内边距，避免被导航栏遮挡
+  margin-bottom: 46px; // 页面底部留出空间，避免内容与页面底部挤在一起
+}
+
+.navbar-brand {
+  img {
+      margin: -$navbar-padding-vertical 0; // 设置导航栏品牌 logo 的垂直外边距
+      height: $navbar-height; // 设置 logo 图片的高度等于导航栏的高度
+      padding: 10px 0; // 为 logo 图片添加顶部和底部的内边距
   }
-  body {
-    padding-top: $navbar-height + $navbar-margin-bottom;
-    margin-bottom: 46px;
+}
+  
+.header-container {
+  background-color: black; // 设置背景颜色为黑色
+  background: url('../img/bg.jpg') no-repeat 50% 0; // 设置背景图片不重复，居中显示
+  color: #fff; // 设置文字颜色为白色
+
+  h1 {
+      color: #fff; // 设置 h1 标签文字颜色为白色
   }
-  
-  .navbar-brand{
-    img{
-      margin: -$navbar-padding-vertical 0;
-      height: $navbar-height;
-      padding: 10px 0;
-    }
-  }
-  
-  
-  .header-container {
-    background-color: black;
-    background: url('../img/bg.jpg') no-repeat 50% 0;
-    color: #fff;
-  
-    h1 {
-      color: #fff;
-    }
-    // background-attachment: fixed;
-    background-size: cover;
-    background-position: center 36%;
-    margin-top: -37px;
-  }
+  // background-attachment: fixed; // 背景固定效果（注释掉）
+  background-size: cover; // 背景图片覆盖整个容器
+  background-position: center 36%; // 调整背景图片位置
+  margin-top: -37px; // 设置顶部外边距，调整容器的位置
+}
+
   .navbar-container {
-    font-size: 16px;
+    font-size: 16px; // 设置导航栏字体大小
   }
+
   .page-content {
-    padding-bottom: 20px;
-  }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;    
-    padding-top: 10px;
-    background-color: $gray-lighter;
-    color: $gray-dark;
+    padding-bottom: 20px;// 为页面内容添加底部内边距
   }
   
+  .footer {
+    position: absolute; // 设置页脚绝对定位，固定在页面底部
+    bottom: 0;
+    width: 100%; // 页脚宽度设置为100%
+    padding-top: 10px; // 页脚顶部内边距
+    background-color: $gray-lighter; // 页脚背景颜色
+    color: $gray-dark; // 页脚文字颜色
+}
+  
+  // .post-list-container {
+  //   li a.active {
+  //     font-weight: bold;
+  //   }
+  // }
   .post-list-container {
     li a.active {
-      font-weight: bold;
+        font-weight: bold; // 将当前激活的链接字体加粗
     }
-  }
-  *[id]:before {
-    display: block;
-    content: " ";
-    margin-top: -75px;
-    height: 75px;
-    visibility: hidden;
-  }
+}
+
+
+
+*[id]:before {
+  display: block;
+  content: " "; // 为具有 ID 的元素在其上方留出空间
+  margin-top: -75px; // 向上偏移 75px
+  height: 75px;
+  visibility: hidden;
+}
+  
   .navbar-form .has-feedback .form-control-feedback{
-    top:10px
+    top:10px; // 修正反馈图标在表单中的垂直位置
   }
   
+
+//  新增 h2.custom-title 样式
+h2.custom-title {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

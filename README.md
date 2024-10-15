@@ -1,6 +1,13 @@
-# Jekyll Doc Theme
 
-Go to [the website](https://buaa-trans-mine-group.github.io/minesim/) for detailed information and demo.
+# MineSim-Web
+This is the private repo for developing MineSim website. 
+ 
+It is based on  https://aksakalli.github.io/jekyll-doc-theme/ .
+
+
+# Original README: 
+# Jekyll Doc Theme
+Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
 
 ## Running locally
 
