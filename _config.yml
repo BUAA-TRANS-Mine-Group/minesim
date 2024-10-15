@@ -1,58 +1,68 @@
-# Site settings
-title: MineSim
-email: chenzhifa@buaa.edu.com
-description: >
+# Site settings 网站的基本信息设置
+title: MineSim # 网站的标题，将显示在浏览器标签页和搜索引擎中
+email: chenzhifa@buaa.edu.com # 网站管理员的邮箱
+description: > # 网站的描述，会出现在搜索引擎结果和网站的meta标签中
   MineSim, an open-source, scenariobased simulation test system specifically developed for planning tasks of autonomous trucks in open-pit mines.
-lang: en-US
+lang: en-US # 网站的默认语言，设为美式英语
 
-baseurl: "/minesim" # the subpath of your site, e.g. /blog/
-url: https://buaa-trans-mine-group.github.io/minesim # the base hostname & protocol for your site
-git_address: https://github.com/buaa-trans-mine-group/minesim
-git_edit_address: https://github.com/buaa-trans-mine-group/minesim/blob/gh-pages
+# URL 和 基础路径设置
+baseurl: "/minesim" # 网站的子路径，例如 /minesim/，如果站点托管在子目录下使用该路径
+url: https://buaa-trans-mine-group.github.io/minesim # 网站的基本URL，包括协议和主机名
+git_address: https://github.com/buaa-trans-mine-group/minesim # 项目的 GitHub 地址
+git_edit_address: https://github.com/buaa-trans-mine-group/minesim/blob/gh-pages # 用于编辑页面的 GitHub 地址
 
-# theme options from https://bootswatch.com/3/ 
-# comment out this to use default Bootstrap
-bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+# 主题设置，使用 Bootswatch 提供的主题
+# Bootswatch 提供了多种基于 Bootstrap 的主题，这里选择了 "paper" 主题
+# 如果不想使用 Bootswatch 主题，可以注释掉这行，默认会使用 Bootstrap 样式
+bootwatch: paper # 可选的主题包括 cerulean, cosmo, cyborg, flatly 等
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-# Plugins (previously gems:)
+# Build settings 站点构建设置
+markdown: kramdown # 使用 Kramdown 作为 Markdown 的解析器
+highlighter: rouge # 使用 Rouge 作为代码高亮工具
+
+# Plugins 插件设置，之前称为 gems:，添加了几个常用插件
 plugins:
-  - jekyll-feed
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-feed # 自动生成 RSS 订阅 Feed
+  - jekyll-redirect-from # 设置页面重定向
+  - jekyll-seo-tag # 为站点生成 SEO 优化的标签
+  - jekyll-sitemap # 自动生成网站的 Sitemap（站点地图）
 
+# 排除不需要生成的文件和目录，防止它们被 Jekyll 处理
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - .idea/
-  - .gitignore
-  - README.md
-  - vendor
-timezone: Europe/Berlin
+  - Gemfile # Bundler 用来管理 Ruby gem 依赖的文件
+  - Gemfile.lock # 依赖的锁定文件
+  - .idea/ # IDE 的配置目录
+  - .gitignore # Git 忽略的文件列表
+  - README.md # 项目的 README 文档
+  - vendor # vendor 目录（第三方依赖）
+
+# 设置时区，确保发布的文章或文档显示正确的时间
+# timezone: Europe/Berlin # 设置为德国柏林时间，可以修改为你所在的时区
+timezone: Asia/Shanghai
+
+# 设置默认值，定义 _posts 和 _docs 目录下的文件的默认布局和 SEO 信息
 defaults:
 - scope:
-    path: _posts
-    type: posts
+    path: _posts # 作用域为 _posts 目录下的所有文件
+    type: posts # 作用域的文件类型为 posts
   values:
-    layout: post
-    sectionid: blog
+    layout: post # 默认使用 post 布局
+    sectionid: blog # 设置 sectionid 为 blog，用于区分内容
 
 - scope:
-    path: _docs
-    type: docs
+    path: _docs # 作用域为 _docs 目录下的所有文件
+    type: docs # 作用域的文件类型为 docs
   values:
-    layout: docs
-    sectionid: docs
-    seo:
+    layout: docs # 默认使用 docs 布局
+    sectionid: docs # 设置 sectionid 为 docs
+    seo: # 为该部分设置 SEO 标签
       type: "WebPage"
 
+# 定义 Jekyll 网站的集合 collections，生成独立的页面集合
 collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
-  posts:
-    permalink: /blog/:year/:month/:day/:title/
-    output: true
+  docs: # 定义名为 docs 的集合，用于存放文档
+    permalink: /:collection/:path/ # 文档的固定链接格式
+    output: true # 是否输出生成的 HTML
+  posts: # 定义名为 posts 的集合，用于博客文章
+    permalink: /blog/:year/:month/:day/:title/ # 博客文章的固定链接格式
+    output: true # 是否输出生成的 HTML
