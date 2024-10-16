@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
- <!-- 设置页面布局为默认布局 --> <!-- 代码片段展示了一个基于Jekyll模板的静态网页结构. -->
+<!-- 设置页面布局为默认布局 --> <!-- 代码片段展示了一个基于Jekyll模板的静态网页结构. -->
 
 
 <!-- 页眉部分，使用了Bootstrap的jumbotron类，主要用于展示MineSim的标题和简介 -->
@@ -9,8 +9,9 @@ layout: default
     <div class="container">
         <!-- 主标题，展示MineSim的概述 -->
         <h2 class="custom-title">MineSim: Scenario-Based Simulator for Autonomous Truck Planning in Open-Pit Mines</h2>
-         <!-- 简短的介绍，概述系统的主要功能 -->
-        <p>MineSim includes functionalities for automated scenario parsing, state updates for the ego vehicle and other agents,
+        <!-- 简短的介绍，概述系统的主要功能 -->
+        <p>MineSim includes functionalities for automated scenario parsing, state updates for the ego vehicle and other
+            agents,
             and metric evaluation and visualization tools.</p>
         <!-- 链接到更多文档 -->
         <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | relative_url }}" role="button">Learn more</a></p>
@@ -21,64 +22,114 @@ layout: default
 <!-- 主内容容器 -->
 <div class="container">
     <div class="row">
-        
+
         <!-- <div class="col-md-6">左边内容区，数字可以调整栅格列数大小； 在 Bootstrap 栅格系统中，栅格系统是基于12列的，意味着左右两部分加起来的栅格数应为12 -->
         <div class="col-lg-7 col-md-6"><!-- 左边内容区：大屏占7个栅格，小屏占6个栅格 -->
             <h4 class="header-light regular-pad">MineSim Simulator</h4>
-            <!-- 强调MineSim的功能和用途 -->  
+            <!-- 强调MineSim的功能和用途 -->
             <!-- <p class="lead"><strong>MineSim</strong>, an open-source, scenario-based simulation test system specifically developed for 
                 <strong>planning tasks </strong> of autonomous trucks in open-pit mines.</p> -->
-                 <!-- 详细说明MineSim的组成部分，包括模拟引擎、指标系统、场景可视化工具等功能 -->
-            <p class="lead">MineSim consists of three main components: the Simulation Engine, the Metric System, and the Scenario Visualization tool. 
-            The Simulation Engine serves as the core of MineSim. It loads and parses scenarios from the scenario library via the Environment 
-            Manager, then implements closed-loop simulation tests for autonomous mining trucks through the sequential execution of the Planning 
-            Algorithm, Ego Update Model, and Agent Update Policy. The Ego Update Model is responsible for updating the state of the ego vehicle 
-            in the simulation. It receives actions output by the tested algorithm, represented as [acceleration, steering angle], and generates 
-            the ego vehicle's updated state for the next step. The Agent Update Policy uses multiple agent objects and environmental states as 
-            inputs to determine the appropriate actions and next state for controllable agents within the scenario. The Metric System enables 
-            users to create a customized evaluation framework focused on specific performance after a set of scenario tests. It includes four 
-            main categories: safety, efficiency, smoothness, and task completion. The Scenario Visualization tool provides both 2D top-down and 
-            3D views of the test scenarios, helping users better understand and demonstrate the proposed algorithms' performance.</p>
+            <!-- 详细说明MineSim的组成部分，包括模拟引擎、指标系统、场景可视化工具等功能 -->
+            <p class="lead"><strong>MineSim</strong>, an open-source, scenario-based simulation test system specifically
+                developed for <strong>planning tasks </strong> in open-pit mines. MineSim consists of three main
+                components: the Simulation Engine, the Metric System, and the Scenario Visualization tool. The
+                Simulation Engine serves as the core of MineSim.It loads and parses scenarios from the scenario library
+                via the Environment Manager, then implements closed-loop simulation tests for autonomous mining trucks
+                through the sequential execution of the Planning Algorithm, Ego Update Model, and Agent Update Policy.
+            </p>
         </div>
- 
+
+
         <!-- <div class="col-md-6 text-center">右边内容区 -->
         <div class="col-lg-5 col-md-6 text-center"><!-- 右边内容区：大屏占5个栅格，小屏占6个栅格 -->
             <!-- <img src="{{ "/assets/img/system-architecture-minesim.png" | relative_url }}" alt="Jekyll logo" class="img-responsive"> -->
-            <img src="{{ "/assets/img/system-architecture-minesim.png" | relative_url }}" alt="system architecture" class="img-responsive">
+            <img src="{{ "/assets/img/system-architecture-minesim.png" | relative_url }}" alt="system architecture"
+                class="img-responsive">
+        </div>
+    </div>
+    <hr>
+
+    <!-- 在主内容区添加新的行，增加视频和GIF -->
+    <div class="row">
+        <p class="lead">The Ego Update Model is responsible for updating the state of the ego vehicle in the simulation.
+            It receives actions output by the tested algorithm, represented as [acceleration, steering angle], and
+            generates the ego vehicle's updated state for the next step. The Agent Update Policy uses multiple agent
+            objects and environmental states as inputs to determine the appropriate actions and next state for
+            controllable agents within the scenario. The Metric System enables users to create a customized evaluation
+            framework focused on specific performance after a set of scenario tests. It includes four main categories:
+            safety, efficiency, smoothness, and task completion. The Scenario Visualization tool provides both 2D
+            top-down and 3D views of the test scenarios, helping users better understand and demonstrate the proposed
+            algorithms' performance.</p>
+    </div>
+    <hr>
+
+
+    <!-- 在主内容区添加新的行，增加视频和GIF -->
+    <div class="row">
+        <!-- 左边内容区 -->
+        <div class="col-lg-6 col-md-6">
+            <h4 class="text-center"> Scenario 2D Visualizer</h4>
+            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: Sampling Planner using Predefined Maneuver Modes
+                (SPPMM). </p>
+
+            <img style="display:block; width:100%; height:auto;" 
+            src="https://raw.githubusercontent.com/byChenZhifa/archive/main/minesim//gifs/web-dapai_intersection_1_3_4-sppmm.gif" 
+            alt="Example GIF">
+        </div>
+
+        <!-- 右边内容区，展示系统架构的图片 -->
+        <div class="col-lg-6 col-md-6 text-center">
+            <h4 class="text-center"> Scenario 3D Visualizer</h4>
+            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: SPPMM. An example of a collision occurring.</p>
+
+            <video style="display:block; width:100%; height:auto;" autoplay="autoplay" muted loop="loop" controls
+                playsinline>
+                <source
+                    src="https://raw.githubusercontent.com/byChenZhifa/archive/main/minesim/3D-dapai_intersection_1_3_4.mp4"
+                    type="video/mp4" />
+            </video>
         </div>
     </div>
     <hr>
 
 
-     <!-- 三个功能模块的介绍部分 -->
+    <!-- 三个功能模块的介绍部分 -->
     <div class="row">
         <div class="col-sm-4"><!-- 功能模块1-->
             <h1 class="text-center"><i class="fa fa-pencil" aria-hidden="true"></i></h1>
             <!-- 功能模块1标题 -->
-            <h4 class="text-center">Dynamic obstacle scenario library and benchmark</h4> 
+            <h4 class="text-center">Dynamic obstacle scenario library and benchmark</h4>
             <!-- 功能模块1内容 -->
             <p>This library focuses on testing obstacle avoidance in mixed traffic at mining
-                intersections. Its scenarios feature unstructured intersections with varying slopes and irregular shapes, where autonomous mining trucks interact with other vehicles. 
-                The main goal is to assess the trucks' smooth obstacle avoidance. Task settings and benchmark algorithms 
-                are detailed in <code>Code Repository</code>: <a href="https://github.com/buaa-trans-mine-group/minesim-dynamic">MineSim-Dynamic</a>.
+                intersections. Its scenarios feature unstructured intersections with varying slopes and irregular
+                shapes, where autonomous mining trucks interact with other vehicles.
+                The main goal is to assess the trucks' smooth obstacle avoidance. Task settings and benchmark algorithms
+                are detailed in <code>Code Repository</code>: <a
+                    href="https://github.com/buaa-trans-mine-group/minesim-dynamic">MineSim-Dynamic</a>.
             </p>
         </div>
 
         <div class="col-sm-4"><!-- 功能模块2-->
             <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
             <h4 class="text-center">Static obstacle scenario library and benchmark</h4>
-            <p>This library is designed to test obstacle avoidance with static obstacles on mining roads. It records scenarios where the trucks face static obstacles 
-                of various sizes on roads with different curves and widths. The focus is on assessing the ability of autonomous mining trucks to plan smooth, efficient 
-                trajectories. Detailed task settings and benchmark algorithms are provided 
-                in  <code>Code Repository</code>: <a href="https://github.com/buaa-trans-mine-group/minesim-static">MineSim-Static</a>.</p> 
+            <p>This library is designed to test obstacle avoidance with static obstacles on mining roads. It records
+                scenarios where the trucks face static obstacles
+                of various sizes on roads with different curves and widths. The focus is on assessing the ability of
+                autonomous mining trucks to plan smooth, efficient
+                trajectories. Detailed task settings and benchmark algorithms are provided
+                in <code>Code Repository</code>: <a
+                    href="https://github.com/buaa-trans-mine-group/minesim-static">MineSim-Static</a>.</p>
         </div>
 
         <div class="col-sm-4"><!-- 功能模块3-->
             <h1 class="text-center"><i class="fa fa-code-fork" aria-hidden="true"></i></h1>
             <h4 class="text-center">Scenario visualization tool</h4>
-            <p>MineSim provides two Scenario Visualization Tools: the 2D Visualizer and the 3D Visualizer.The 2D Visualizer, developed using the Python matplotlib, renders 
-                top-down views of each frame of a single scenario based on the simulation log file. The 3D Visualizer, developed using ROS, renders 3D views of each frame 
-                in a scenario based on the simulation log file (see <code>Code Repository</code>: <a href="https://github.com/BUAA-TRANS-Mine-Group/MineSim-3DVisualTool">MineSim-3DVisualTool</a> ).</p>
+            <p>MineSim provides two Scenario Visualization Tools: the 2D Visualizer and the 3D Visualizer.The 2D
+                Visualizer, developed using the Python matplotlib, renders
+                top-down views of each frame of a single scenario based on the simulation log file. The 3D Visualizer,
+                developed using ROS, renders 3D views of each frame
+                in a scenario based on the simulation log file (see <code>Code Repository</code>: <a
+                    href="https://github.com/BUAA-TRANS-Mine-Group/MineSim-3DVisualTool">MineSim-3DVisualTool</a> ).</p>
         </div>
     </div>
 </div>
