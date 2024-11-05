@@ -6,6 +6,7 @@ redirect_from: /docs/index.html
 
 <!-- <span style="background-color: yellow;">More information coming soon. Stay tuned as we continue to build and enhance the site.</span> -->
 
+# Coming soon!
 ### More information coming soon. Stay tuned as we continue to build and enhance the site.
 
 
