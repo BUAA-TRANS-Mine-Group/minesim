@@ -10,7 +10,7 @@ We are excited to announce the publication of *MineSim Simulator*, a scenario-ba
 Our work has been submitted to the journal *Accident Analysis and Prevention* under the title: **MineSim: A Scenario-Based Simulation Test System and Benchmark for Autonomous Trucks in Open-Pit Mines.**
 
 #### Authors:  
-Zhifa Chen, Guizhen Yu, Peng Chen (Corresponding Author), Guoxi Cao, Zheng Li, Yifang Zhang, Haoyuan Ni, Bin Zhou, Jian Sun (b), Huanyu Ban (c)
+Zhifa Chen (a), Guizhen Yu (a), Peng Chen (a), Guoxi Cao (a), Zheng Li (a), Yifang Zhang (a), Haoyuan Ni (a), Bin Zhou (a), Jian Sun (b), Huanyu Ban (c)
 
 #### Affiliation:  
 a. School of Transportation Science and Engineering, Key Laboratory of Autonomous Transportation Technology for Special Vehicles, Ministry of Industry and Information Technology, Beihang University, Beijing 100191, China.
