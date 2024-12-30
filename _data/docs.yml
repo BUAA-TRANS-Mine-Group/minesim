@@ -1,11 +1,16 @@
-- title: Getting Started
+- title: MineSim Overview
   docs:
-  - home
-  - themes
-  - customization
+    - MineSim-Overview/home-system-design
+    - MineSim-Overview/Simulation-Engine
+    - MineSim-Overview/Metrics-evaluation
+    - MineSim-Overview/Scenario-visualization-tool
 
-- title: Examples
+- title: Scenario Description
   docs:
-  - cheatsheet
-  - font-awesome
-  - bootstrap
+    - scenario-description/scenario-task-description
+    - scenario-description/HD-map-description
+
+- title: Benchmarks
+  docs:
+    - Benchmarks/Benchmarks-for-dynamic-scenario
+    - Benchmarks/Benchmarks-for-static-scenario

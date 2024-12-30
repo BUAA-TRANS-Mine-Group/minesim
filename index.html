@@ -10,11 +10,11 @@ layout: default
         <!-- 主标题，展示MineSim的概述 -->
         <h2 class="custom-title">MineSim: Scenario-Based Simulator for Autonomous Truck Planning in Open-Pit Mines</h2>
         <!-- 简短的介绍，概述系统的主要功能 -->
-        <p>MineSim includes functionalities for automated scenario parsing, state updates for the ego vehicle and other
-            agents,
-            and metric evaluation and visualization tools.</p>
+        <p>MineSim includes several components: environment manager, state update models for the ego vehicle,
+            state update policies for other agents, metric evaluation, and scenario visualization tools.</p>
         <!-- 链接到更多文档 -->
-        <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | relative_url }}" role="button">Learn more</a></p>
+        <p><a class="btn btn-primary btn-lg" href="{{ "/docs/MineSim-Overview/home-system-design" | relative_url }}" role="button">Quick Start</a>
+        </p>
     </div>
 </div>
 
@@ -30,12 +30,13 @@ layout: default
             <!-- <p class="lead"><strong>MineSim</strong>, an open-source, scenario-based simulation test system specifically developed for 
                 <strong>planning tasks </strong> of autonomous trucks in open-pit mines.</p> -->
             <!-- 详细说明MineSim的组成部分，包括模拟引擎、指标系统、场景可视化工具等功能 -->
-            <p class="lead"><strong>MineSim</strong>, an open-source, scenario-based simulation test system specifically
-                developed for <strong>planning tasks </strong> in open-pit mines. MineSim consists of three main
-                components: the Simulation Engine, the Metric System, and the Scenario Visualization tool. The
-                Simulation Engine serves as the core of MineSim.It loads and parses scenarios from the scenario library
+            <p class="lead"><strong>MineSim</strong>, an open-source, scenario-based simulation test system is designed
+                for autonomous driving <strong>planning tasks</strong> in open-pit mines. MineSim consists of three main
+                components: the Simulation Engine, the Metric evaluation, and the Scenario Visualization tool. The
+                Simulation Engine serves as the core of MineSim. It loads and parses scenarios from the scenario library
                 via the Environment Manager, then implements closed-loop simulation tests for autonomous mining trucks
-                through the sequential execution of the Planning Algorithm, Ego Update Model, and Agent Update Policy.
+                through the sequential execution of the Prediction Algorithm, Planning Algorithm, Motion Controller, Ego
+                Update Model, and Agent Update Policy.
             </p>
         </div>
 
@@ -51,15 +52,16 @@ layout: default
 
     <!-- 在主内容区添加新的行，增加视频和GIF -->
     <div class="row">
-        <p class="lead">The Ego Update Model is responsible for updating the state of the ego vehicle in the simulation.
-            It receives actions output by the tested algorithm, represented as [acceleration, steering angle], and
-            generates the ego vehicle's updated state for the next step. The Agent Update Policy uses multiple agent
-            objects and environmental states as inputs to determine the appropriate actions and next state for
-            controllable agents within the scenario. The Metric System enables users to create a customized evaluation
-            framework focused on specific performance after a set of scenario tests. It includes four main categories:
-            safety, efficiency, smoothness, and task completion. The Scenario Visualization tool provides both 2D
-            top-down and 3D views of the test scenarios, helping users better understand and demonstrate the proposed
-            algorithms' performance.</p>
+        <p class="lead">The <strong>Ego Update Model</strong> is responsible for updating the state of the ego vehicle
+            in the simulation.It receives actions output by the tested algorithm, represented as [acceleration, steering
+            angle], and generates the ego vehicle's updated state for the next step. The <strong>Agent Update
+                Policy</strong> uses multiple agent objects and environmental states as inputs to determine the
+            appropriate actions and next state for controllable agents within the scenario. The <strong>Metric
+                Evaluation</strong> enables users to create a customized evaluation framework focused on specific
+            performance after a set of scenario tests. It includes four main categories: safety, efficiency, smoothness,
+            and task completion. The <strong>Scenario Visualization tool</strong> provides both 2D top-down and 3D views
+            of the test scenarios, helping users better understand and demonstrate the proposed algorithms' performance.
+        </p>
     </div>
     <hr>
 
@@ -69,18 +71,18 @@ layout: default
         <!-- 左边内容区 -->
         <div class="col-lg-6 col-md-6">
             <h4 class="text-center"> Scenario 2D Visualizer</h4>
-            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: Sampling Planner using Predefined Maneuver Modes
-                (SPPMM). </p>
-
-            <img style="display:block; width:100%; height:auto;" 
-            src="https://raw.githubusercontent.com/byChenZhifa/archive/main/minesim//gifs/web-dapai_intersection_1_3_4-sppmm.gif" 
-            alt="Example GIF">
+            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: Sampling Planner using Predefined
+                Maneuver Modes(SPPMM).</p>
+            <img style="display:block; width:100%; height:auto;"
+                src="https://raw.githubusercontent.com/byChenZhifa/archive/main/minesim//gifs/web-dapai_intersection_1_3_4-sppmm.gif"
+                alt="Example GIF">
         </div>
 
         <!-- 右边内容区，展示系统架构的图片 -->
         <div class="col-lg-6 col-md-6 text-center">
             <h4 class="text-center"> Scenario 3D Visualizer</h4>
-            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: SPPMM. An example of a collision occurring.</p>
+            <p class="lead">Scenario ID:dapai_intersection_1_3_4. Planning Method: SPPMM. An example of a collision
+                occurring.</p>
 
             <video style="display:block; width:100%; height:auto;" autoplay="autoplay" muted loop="loop" controls
                 playsinline>
