@@ -37,22 +37,31 @@ body {
 
 // 4. 文档内容样式
 .post-content, .docs-content {
-  font-size: 20px; // 正文字体大小
+  font-size: 2rem; // 正文字体大小
   line-height: 1.5; // 行间距，提升可读性
 }
  
+// 5. 自定义标题样式
 /* 调整标题的字体大小 */
 .post-content h1, .docs-content h1 {
-  font-size: 2.5em; /* 更大的标题 */
+  font-size: 8rem; /* 更大的标题 */
 }
 .post-content h2, .docs-content h2 {
-  font-size: 2em; /* 中等大小的标题 */
+  font-size: 7rem; /* 中等大小的标题 */
+}
+.post-content h3, .docs-content h3 {
+  font-size: 6rem; /* 中等大小的标题 */
+}
+.post-content h4, .docs-content h4 {
+  font-size: 5rem; /* 中等大小的标题 */
+}
+.post-content h5, .docs-content h5 {
+  font-size: 4rem; /* 中等大小的标题 */
 }
  
-// 5. 自定义标题样式
 h2.custom-title {
-  color: #ffffff; // 设置文字颜色为白色
-  font-size: 48px; // 自定义标题字体大小
+  color: #000000; // 设置文字颜色为白色
+  // font-size: 48px; // 自定义标题字体大小
   font-weight: bold; // 加粗
   text-align: left; // 左对齐
   margin-top: 20px;
@@ -124,3 +133,23 @@ th {
   font-weight: bold; /* 可选：加粗表头文字 */
   border: 1px solid #000; /* 设置单元格边框，您可以选择不同的颜色 */
 }
+
+// 12 通过自定义 CSS 来调整引用部分的字体大小
+// 这个规则会将所有引用部分的字体大小调整为与正文一致。1rem 是相对于根元素的字体大小，通常与正文的字体大小一致。
+blockquote {
+  font-size: 1.3rem; /* 设置与正文相同的字体大小 */
+  line-height: 1.2; /* 可选：缩小行间距 */
+}
+
+
+
+// 1. em 的含义和工作原理
+// em 是相对于 父元素的字体大小 的单位。
+// 这意味着如果你设置 font-size: 2.5em，它的值将基于当前元素的父元素的字体大小。如果父元素的字体大小为 16px，那么 2.5em 就是 2.5 * 16px = 40px。
+// 如果父元素的字体大小发生变化，使用 em 的元素会相应地调整其大小。
+// 2. rem 的含义和工作原理
+// rem 是相对于 根元素（通常是 <html> 标签）的字体大小 的单位。
+// 例如，如果根元素的字体大小为 16px，那么 1rem 就是 16px。如果你设置 font-size: 2.5rem，那么它的大小就是 2.5 * 16px = 40px，无论该元素的父元素的字体大小如何。
+// 3. 区别总结
+// em 依赖于父元素的字体大小，因此它是继承性的，父元素字体大小的变化会影响所有使用 em 的元素。
+// rem 依赖于根元素的字体大小，不受父元素的影响，使得它更加稳定和一致，在响应式设计中使用 rem 会更加灵活。

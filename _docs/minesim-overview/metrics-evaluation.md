@@ -28,7 +28,7 @@ Unlike passenger vehicles, where algorithms focus on optimizing ride comfort bas
 #### Task Completion: 
  Task completion  is evaluated for both scenarios in which the vehicle reaches the target area and those in which it does not. If the target is not reached, the completion score is determined by the vehicle’s progress along the route, specifically by comparing the final driving distance to the total route distance. If the vehicle reaches the target, the quality of task completion is also assessed by evaluating the final yaw deviation, which measures the vehicle's alignment with the road at the goal based on the yaw difference from the target orientation.
 
-Note："Dynamic Obstacle Avoidance Scenario Testing"and "Dynamic Obstacle Avoidance Scenario Testing" is different.
+*Note："Dynamic Obstacle Avoidance Scenario Testing"and "Dynamic Obstacle Avoidance Scenario Testing" is different.*
 
 
 
