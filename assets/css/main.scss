@@ -1,4 +1,4 @@
----
+--- 
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
@@ -9,21 +9,39 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 // 这里通过条件判断引入 Bootswatch 主题变量
-@import
-  // 引入 Bootswatch 主题的变量
+@import // 引入 Bootswatch 主题的变量
   {% if site.bootwatch %}
     "bootswatch/{{ site.bootwatch | downcase }}/variables",
   {% endif %}
-
-  // 引入 Bootstrap 核心样式
   "bootstrap",
-
-  // 如果定义了 Bootswatch 主题，继续引入 Bootswatch 的自定义样式  
   {% if site.bootwatch %}
-    "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",// 引入 Bootswatch 样式
+    "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",
   {% endif %}
-
-  // 引入代码高亮的样式
   "syntax-highlighting",
-  // 自定义 MineSim 样式文件
   "minesim";
+
+
+// @import  
+// {
+//   % if site.bootwatch %
+// }
+// "bootswatch/{{ site.bootwatch | downcase }}/variables",
+// {
+// % endif %
+// }
+// // 引入 Bootstrap 核心样式
+// "bootstrap",
+// // 如果配置了 site.bootwatch，则会引入 Bootswatch 主题的自定义样式。Bootswatch 提供了多种免费的 Bootstrap 主题，因此通过条件判断来确定是否需要引入这些主题样式。
+// {
+//   % if site.bootwatch %
+// }
+// "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",
+// // 引入 Bootswatch 样式
+// {
+//   % endif %
+// }
+
+// // 引入代码高亮的样式
+// "syntax-highlighting",
+// // 自定义 MineSim 样式文件；这是一个自定义的样式文件，应该包含了与 MineSim 项目相关的特定样式。它可能定义了页面的颜色方案、排版、按钮样式等。
+// "minesim";

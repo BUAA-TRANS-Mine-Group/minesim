@@ -1,27 +1,34 @@
 ---
 layout: default
 ---
+<!-- 该页面使用的布局为default.html。 -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-          {% include docs_nav.html %}
-        </div>
-
-        <div class="col-md-8">
-            <h2>{{ page.title }}</h2>
-            <div id="markdown-content-container">{{ content }}</div>
-            <div style="clear:both;">
-              <p class="text-center">
-                <br />
-                <a target="_blank" href="{{site.git_edit_address}}/{{ page.path }}" class="btn btn-default" role="button">
-                  <i class="fa fa-pencil fa-lg"></i> Improve this page
-                </a>
-              </p>
-            </div>
-            <hr>
-            {% include section_nav.html %}
-        </div>
-
+  <div class="row">
+    <div class="col-lg-3 col-md-2">
+      <!-- 这是一个左边导航栏，占大屏时为3个栅格，小屏时为2个栅格 -->
+      {% include docs_nav.html %}
+      <!-- 引入docs_nav.html文件，它可能包含站点文档的导航菜单。 -->
     </div>
+
+    <div class="col-lg-9 col-md-10">
+      <!-- 右侧主要内容区域，占大屏时为9个栅格，小屏时为10个栅格 -->
+      <h2>{{ page.title }}</h2>
+      <!-- 显示页面标题。 -->
+      <div id="markdown-content-container">{{ content }}</div>
+      <!-- 显示由Markdown解析后的内容。 -->
+      <div style="clear:both;">
+        <p class="text-center">
+          <br />
+          <a target="_blank" href="{{site.git_edit_address}}/{{ page.path }}" class="btn btn-default" role="button">
+            <i class="fa fa-pencil fa-lg"></i> Improve this page
+          </a>
+        </p>
+      </div>
+      <hr>
+      {% include section_nav.html %}
+      <!-- 引入section_nav.html文件，它可能包含页面内的其他导航。 -->
+    </div>
+
+  </div>
 </div>

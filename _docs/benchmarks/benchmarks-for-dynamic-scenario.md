@@ -1,6 +1,6 @@
 ---
 title: Benchmarks for dynamic scenario
-permalink: /docs/Benchmarks/Benchmarks-for-dynamic-scenario/
+permalink: /docs/benchmarks/benchmarks-for-dynamic-scenario/
 description: none
 ---
 

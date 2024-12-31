@@ -1,8 +1,15 @@
 <script>
-  var baseurl = '{{ site.baseurl }}'
-</script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="{{ "/assets/js/bootstrap.min.js" | relative_url }} "></script>
-<script src="{{ "/assets/js/typeahead.bundle.min.js" | relative_url }} "></script>
+  var baseurl = '{{ site.baseurl }}'  
+</script> <!-- 声明并设置站点基础URL，以便在JS中使用。 -->
 
-<script src="{{ "/assets/js/main.js" | relative_url }} "></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- 引入jQuery库。 -->
+
+<script src="{{"/assets/js/bootstrap.min.js" | relative_url }} "></script>
+<!-- 引入Bootstrap JS文件。 -->
+
+<script src=" {{"/assets/js/typeahead.bundle.min.js" | relative_url }} "></script>
+<!-- 引入Typeahead.js库，用于实现输入框的自动补全功能。 -->
+
+<script src=" {{"/assets/js/main.js" | relative_url }} "></script>
+<!-- 引入自定义的main.js文件，包含站点的特定JavaScript功能。 -->

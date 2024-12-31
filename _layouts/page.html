@@ -1,15 +1,21 @@
 ---
 layout: default
 ---
+<!-- 该页面使用的布局为default.html。 -->
 
 <div class="post">
+    <!-- 创建一个包含文章的容器 -->
 
     <header class="post-header">
-        <h2 class="post-title">{{ page.title }}</h2>
+        <!-- 文章头部区域 -->
+        <h3 class="post-title">{{ page.title }}</h3>
+        <!-- 显示文章标题 -->
     </header>
 
     <article class="post-content">
+        <!-- 文章内容区域 -->
         {{ content }}
+        <!-- 显示页面内容 -->
     </article>
 
 </div>

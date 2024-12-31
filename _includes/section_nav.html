@@ -3,16 +3,17 @@ Map grabs the doc sections, giving us an array of arrays. Join, flattens all
 the items to a comma delimited string. Split turns it into an array again.
 {% endcomment %}
 {% assign docs = site.data.docs | map: 'docs' | join: ',' | split: ',' %}
+<!-- 将站点文档数据中的所有文档条目提取并连接成一个逗号分隔的字符串，再转换为数组。 -->
 
 {% comment %}
 Because this is built for every page, lets find where we are in the ordered
 document list by comparing url strings. Then if there's something previous or
 next, lets build a link to it.
 {% endcomment %}
-
 {% for document in docs %}
   {% assign document_url = document | prepend:"/docs/" | append:"/" %}
   {% if document_url == page.url %}
+    <!-- 查找当前页面在文档列表中的位置，如果匹配当前页面URL，则生成上一页和下一页链接。 -->
     <ul class="pager">
       {% if forloop.first %}
         <li class="previous disabled">
@@ -20,6 +21,7 @@ next, lets build a link to it.
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
+        <!-- 如果当前是文档列表的第一项，禁用上一页按钮。 -->
       {% else %}
         {% assign previous = forloop.index0 | minus: 1 %}
         {% assign previous_page = docs[previous] | prepend:"/docs/" | append:"/" %}
@@ -28,6 +30,7 @@ next, lets build a link to it.
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
+        <!-- 如果有上一页，生成指向上一页的链接。 -->
       {% endif %}
 
       {% if forloop.last %}
@@ -36,6 +39,7 @@ next, lets build a link to it.
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
+        <!-- 如果当前是文档列表的最后一项，禁用下一页按钮。 -->
       {% else %}
         {% assign next = forloop.index0 | plus: 1 %}
         {% assign next_page = docs[next] | prepend:"/docs/" | append:"/" %}
@@ -44,6 +48,7 @@ next, lets build a link to it.
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
+        <!-- 如果有下一页，生成指向下一页的链接。 -->
       {% endif %}
       </ul>
     <div class="clear"></div>

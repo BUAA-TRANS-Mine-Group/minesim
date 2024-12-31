@@ -1,109 +1,126 @@
 // ---
 // # Only the main Sass file needs front matter (the dashes are enough)
 // ---
-// @charset "utf-8"; // 指定字符编码为 UTF-8
-
-// // 使用 Sass 模块系统
-// @use "sass:color";
-
-// // 导入部分
-// @import
-//   {% if site.bootwatch %}
-//     "bootswatch/{{ site.bootwatch | downcase }}/variables",
-//   {% endif %}
-
-//   "bootstrap",
-
-//   {% if site.bootwatch %}
-//     "bootswatch/{{ site.bootwatch | downcase }}/bootswatch",
-//   {% endif %}
-
-//   "syntax-highlighting",
-//   "minesim";
+@charset "utf-8"; // 指定字符编码为 UTF-8
 
 
 // 自定义样式部分
+// 1. HTML 和 Body 样式
 html {
-  position: relative; // 设置 HTML 元素的相对定位，确保内容布局相对浏览器窗口进行调整
-  min-height: 100%;   // 设置页面最小高度为 100%，以确保内容占满整个页面高度
+  position: relative; // 设置 HTML 元素相对定位，确保内容布局相对窗口调整
+  min-height: 100%;   // 设置页面最小高度为 100%
 }
 
 body {
-  padding-top: $navbar-height + $navbar-margin-bottom; // 给 body 添加顶部内边距，避免被导航栏遮挡
-  margin-bottom: 46px; // 页面底部留出空间，避免内容与页面底部挤在一起
+  padding-top: $navbar-height + $navbar-margin-bottom; // 避免导航栏遮挡
+  margin-bottom: 40px; // 页面底部留出 40px 空间
 }
 
+// 2. 导航栏样式
 .navbar-brand {
   img {
-      margin: -$navbar-padding-vertical 0; // 设置导航栏品牌 logo 的垂直外边距
-      height: $navbar-height; // 设置 logo 图片的高度等于导航栏的高度
-      padding: 10px 0; // 为 logo 图片添加顶部和底部的内边距
+    margin: -$navbar-padding-vertical 0; // 设置导航栏品牌 logo 的垂直外边距
+    height: $navbar-height; // logo 高度等于导航栏高度
+    padding: 10px 0; // 添加顶部和底部内边距
   }
 }
-  
-.header-container {
-  background-color: black; // 设置背景颜色为黑色
-  background: url('../img/bg.jpg') no-repeat 50% 0; // 设置背景图片不重复，居中显示
-  color: #fff; // 设置文字颜色为白色
-
-  h1 {
-      color: #fff; // 设置 h1 标签文字颜色为白色
-  }
-  // background-attachment: fixed; // 背景固定效果（注释掉）
-  background-size: cover; // 背景图片覆盖整个容器
-  background-position: center 36%; // 调整背景图片位置
-  margin-top: -37px; // 设置顶部外边距，调整容器的位置
+ 
+// 3. 页脚样式
+.footer {
+  position: absolute; // 页脚绝对定位
+  bottom: 0; // 固定到页面底部
+  width: 100%; // 页脚宽度占满页面
+  padding-top: 10px; // 顶部内边距
+  background-color: $gray-lighter; // 页脚背景颜色
+  color: $gray-dark; // 页脚文字颜色
 }
 
-  .navbar-container {
-    font-size: 16px; // 设置导航栏字体大小
-  }
-
-  .page-content {
-    padding-bottom: 20px;// 为页面内容添加底部内边距
-  }
-  
-  .footer {
-    position: absolute; // 设置页脚绝对定位，固定在页面底部
-    bottom: 0;
-    width: 100%; // 页脚宽度设置为100%
-    padding-top: 10px; // 页脚顶部内边距
-    background-color: $gray-lighter; // 页脚背景颜色
-    color: $gray-dark; // 页脚文字颜色
+// 4. 文档内容样式
+.post-content, .docs-content {
+  font-size: 20px; // 正文字体大小
+  line-height: 1.5; // 行间距，提升可读性
 }
-  
-  // .post-list-container {
-  //   li a.active {
-  //     font-weight: bold;
-  //   }
-  // }
-  .post-list-container {
-    li a.active {
-        font-weight: bold; // 将当前激活的链接字体加粗
-    }
+ 
+/* 调整标题的字体大小 */
+.post-content h1, .docs-content h1 {
+  font-size: 2.5em; /* 更大的标题 */
+}
+.post-content h2, .docs-content h2 {
+  font-size: 2em; /* 中等大小的标题 */
+}
+ 
+// 5. 自定义标题样式
+h2.custom-title {
+  color: #ffffff; // 设置文字颜色为白色
+  font-size: 48px; // 自定义标题字体大小
+  font-weight: bold; // 加粗
+  text-align: left; // 左对齐
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
+// 6. 链接样式
+.post-list-container {
+  li a.active {
+    font-weight: bold; // 高亮当前激活的链接
+  }
+}
 
-
+ 
+// 7. 针对带有 ID 的元素
 *[id]:before {
   display: block;
-  content: " "; // 为具有 ID 的元素在其上方留出空间
-  margin-top: -75px; // 向上偏移 75px
-  height: 75px;
-  visibility: hidden;
+  content: " "; // 创建一个空内容块
+  margin-top: -75px; // 向上偏移 75px，防止内容被遮挡
+  height: 75px; // 预留空间
+  visibility: hidden; // 隐藏块内容
 }
-  
-  .navbar-form .has-feedback .form-control-feedback{
-    top:10px; // 修正反馈图标在表单中的垂直位置
-  }
-  
 
-//  新增 h2.custom-title 样式
-h2.custom-title {
-    color: #ffffff;
-    font-size: 48px;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 10px;
+// 8. 表单反馈图标
+.navbar-form .has-feedback .form-control-feedback {
+  top: 10px; // 修正反馈图标的垂直位置
+}
+
+// 9. 页面内容样式
+.page-content {
+  padding-bottom: 20px; // 添加底部内边距，防止内容过于紧凑
+}
+
+// 10. 头部容器样式
+.header-container {
+  background-color: black; // 背景颜色黑色
+  background: url('../img/bg.jpg') no-repeat 50% 0; // 背景图片居中显示
+  color: #fff; // 文字颜色白色
+
+  h1 {
+    color: #fff; // h1 文字颜色白色
+  }
+
+  background-size: cover; // 背景图片覆盖整个容器
+  background-position: center 36%; // 背景图片位置调整
+  margin-top: -37px; // 顶部外边距调整
+}
+
+.navbar-container {
+  font-size: 16px; // 导航栏字体大小
+}
+
+// 11
+/* 给表格、表格单元格和表头设置边框 */
+table {
+  width: 100%; /* 可选：设置表格宽度为 100% */
+  border-collapse: collapse; /* 合并表格单元格的边框 */
+  margin-bottom: 20px; /* 可选：为表格添加底部边距 */
+}
+
+th, td {
+  border: 1px solid #000; /* 设置单元格边框，您可以选择不同的颜色 */
+  padding: 8px; /* 单元格内边距，增加可读性 */
+  text-align: center; /* 居中对齐单元格内容 */
+}
+
+th {
+  background-color: #f4f4f4; /* 可选：设置表头背景色 */
+  font-weight: bold; /* 可选：加粗表头文字 */
+  border: 1px solid #000; /* 设置单元格边框，您可以选择不同的颜色 */
 }

@@ -1,13 +1,31 @@
 <head>
     <meta charset="utf-8">
+    <!-- 设置页面字符编码为UTF-8，确保页面正确显示各种语言字符。 -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 设置IE浏览器的渲染模式为最新版本，避免兼容性问题。 -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 设定视口宽度为设备宽度，并初始化缩放比例为1，以适应不同屏幕大小（如手机、平板）。 -->
 
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/font-awesome.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{"/assets/css/main.css" | relative_url }}">
+    <!-- 引入主样式表，通过relative_url确保路径在不同环境中正确。 -->
 
-    <link rel="shortcut icon" href="{{ "/favicon-truck.ico?1" | relative_url }}">
+    <link rel="stylesheet" href="{{"/assets/css/font-awesome.min.css" | relative_url }}">
+    <!-- 引入FontAwesome图标库的样式文件。 -->
+
+    <link rel="shortcut icon" href="{{"/favicon-truck.ico?1" | relative_url }}">
+    <!-- 设置网站的图标（favicon）。路径添加了查询参数 `?1`，防止浏览器缓存图标。 -->
+
     {% seo %}
+    <!-- Jekyll提供的SEO插件，自动生成页面的SEO元标签（如meta描述等）。 -->
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | absolute_url }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{"/feed.xml" | absolute_url
+        }}" />
+    <!-- 提供RSS订阅的链接，帮助用户订阅站点更新。 -->
+
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
 </head>

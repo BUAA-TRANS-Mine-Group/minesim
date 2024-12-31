@@ -1,40 +1,50 @@
 ---
 layout: default
 ---
+<!-- 该页面使用的布局为default.html。 -->
 
 <div class="container">
     <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-4"> <!-- 左侧栏，宽度为4个栅格 -->
             <div class="well">
+                <!-- 创建一个带有背景的区域 -->
                 <h4>RECENT POSTS</h4>
                 <ul class="list-unstyled post-list-container">
+                    <!-- 显示最近的文章列表 -->
                     {% for post in site.posts limit:10 %}
-                    <li><a href="{{ post.url | relative_url }}" {% if page.title==post.title %} class="active" {% endif %}>{{ post.title }}</a></li>
+                    <!-- 循环显示站点中的前10篇文章 -->
+                    <li><a href="{{ post.url | relative_url }}" {% if page.title==post.title %} class="active" {% endif
+                            %}>{{ post.title }}</a></li>
+                    <!-- 如果当前页面标题与文章标题相同，给链接添加class="active"来突出显示 -->
                     {% endfor %}
-                    <li><a href="{{ "/allposts" | relative_url }}">All posts ...</a></li>
+                    <li><a href="{{"/allposts" | relative_url }}">All posts ...</a></li>
+                    <!-- 提供一个链接跳转到所有文章页面 -->
                 </ul>
             </div>
         </div>
 
-        <div class="col-md-8">
-            <h2>{{ page.title }}</h2>
-            <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-            <div  id="markdown-content-container">{{ content }}</div>
+        <div class="col-md-8"> <!-- 右侧主要内容区域，宽度为8个栅格 -->
+            <h3>{{ page.title }}</h3><!-- 显示页面标题 -->
+            <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %}
+                • {{ page.meta }}{% endif %}</p>
+            <!-- 显示文章的发布日期、作者和元信息（如果有的话） -->
+            <div id="markdown-content-container">{{ content }}</div><!-- 显示文章内容 -->
             <hr>
-            <ul class="pager">
+            <ul class="pager"><!-- 分页控件 -->
                 {% if page.previous %}
                 <li class="previous">
                     <a href="{{ page.previous.url | relative_url }}">
                         <span aria-hidden="true">&larr;</span> Older
                     </a>
-                </li>
-                {% endif %} {% if page.next %}
+                </li> <!-- 如果有上一页，显示“上一页”按钮 -->
+                {% endif %}
+                {% if page.next %}
                 <li class="next">
                     <a href="{{ page.next.url | relative_url }}">
-                      Newer <span aria-hidden="true">&rarr;</span>
+                        Newer <span aria-hidden="true">&rarr;</span>
                     </a>
-                </li>
+                </li> <!-- 如果有下一页，显示“下一页”按钮 -->
                 {% endif %}
             </ul>
         </div>

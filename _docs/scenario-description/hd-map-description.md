@@ -1,6 +1,6 @@
 ---
 title: HD map description
-permalink: /docs/scenario-description/HD-map-description/
+permalink: /docs/scenario-description/hd-map-description/
 description: none
 ---
 

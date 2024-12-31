@@ -1,6 +1,6 @@
 ---
 title: Benchmarks for static scenario
-permalink: /docs/Benchmarks/Benchmarks-for-static-scenario/
+permalink: /docs/benchmarks/benchmarks-for-static-scenario/
 description: none
 ---
 

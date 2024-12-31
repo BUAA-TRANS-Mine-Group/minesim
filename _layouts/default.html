@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<!-- 设置HTML语言属性，首先优先使用页面语言设置（page.lang），如果没有设置则使用站点语言（site.lang），否则默认为英语（en）。 -->
 
 {% include head.html %}
+<!-- 引入head.html文件，通常包含meta信息、CSS文件和其他头部内容。 -->
 
 <body>
-
     {% include topnav.html %}
+    <!-- 引入topnav.html文件，通常是站点的顶部导航栏。 -->
 
     <div class="page-content">
         <div class="wrapper">
             {{ content }}
+            <!-- 页面主体内容，将由其他页面模板提供的内容（例如docs.html、post.html）替换。 -->
         </div>
     </div>
 
     {% include footer.html %}
+    <!-- 引入footer.html文件，通常包含页面的底部信息。 -->
+
     {% include js_files.html %}
+    <!-- 引入js_files.html文件，通常是页面所需的JavaScript文件。 -->
 </body>
 
 </html>

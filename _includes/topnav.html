@@ -1,30 +1,67 @@
 <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- 定义导航条（navbar），使用Bootstrap的默认样式，并固定在页面顶部（navbar-fixed-top） -->
+
     <div class="container navbar-container">
+        <!-- 包裹导航条内容的容器，使用container类确保内容居中并具有适当的边距 -->
+
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+            <!-- 定义导航条的头部部分，通常用于放置logo和菜单按钮 -->
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                <!-- 可折叠按钮：在小屏设备上显示，用于展开和折叠菜单 -->
+                <span class="sr-only">Toggle navigation</span>
+                <!-- 为屏幕阅读器提供的描述信息，指示按钮的作用是切换导航 -->
+                <span class="icon-bar"></span>
+                <!-- 用三个“icon-bar”创建汉堡菜单的三条水平线 -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
             <a class="navbar-brand" href="{{ site.baseurl }}/">
-                <span><img src="{{ "/assets/img/log-minetruck.png" | relative_url }}" alt="Logo"></span> {{ site.title }}
+                <!-- 定义导航栏的品牌链接，通常是站点的logo或者首页的链接 -->
+                <span><img src="{{"/assets/img/log-minetruck.png" | relative_url }}" alt="Logo"></span>
+                <!-- 显示站点的logo，使用Jekyll的relative_url确保路径在不同环境中正确 -->
+                {{ site.title }}
+                <!-- 显示站点的标题 -->
             </a>
         </div>
+
         <div id="navbar" class="collapse navbar-collapse">
+            <!-- 定义导航栏内容，使用collapse类确保在小屏幕上可以折叠 -->
             <ul class="nav navbar-nav">
-                <li {% if page.sectionid=='docs' %} class="active" {% endif %}><a href="{{ "/docs/MineSim-Overview/home-system-design" | relative_url }}">Quick Start</a></li>
-                <li {% if page.sectionid=='blog' %} class="active" {% endif %}><a href="{{ site.posts.first.url | relative_url }}">Blog</a></li>
+                <!-- 定义导航项 -->
+
+                <li {% if page.sectionid=='docs' %} class="active" {% endif %}>
+                    <!-- 如果当前页面的sectionid是"docs"，则为该导航项添加"active"类，表示它是当前选中的项 -->
+                    <a href="{{ '/docs/minesim-overview/home-system-design' | relative_url }}">Quick Start</a>
+                    <!-- 链接到"Quick Start"文档 -->
+                </li>
+
+                <li {% if page.sectionid=='blog' %} class="active" {% endif %}>
+                    <!-- 如果当前页面的sectionid是"blog"，则为该导航项添加"active"类 -->
+                    <a href="{{ site.posts.first.url | relative_url }}">Blog</a>
+                    <!-- 链接到博客的第一页 -->
+                </li>
             </ul>
+
             <div class="navbar-right">
+                <!-- 将右侧内容放入此区域，通常用于显示搜索框和GitHub链接 -->
+
                 <form class="navbar-form navbar-left">
+                    <!-- 创建一个搜索表单，用于搜索功能 -->
                     <div class="form-group has-feedback">
                         <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <!-- 搜索框，用户可以输入搜索内容 -->
                         <i class="fa fa-search form-control-feedback"></i>
+                        <!-- 使用Font Awesome图标库显示一个放大镜图标，表示搜索 -->
                     </div>
                 </form>
+
                 <ul class="nav navbar-nav">
+                    <!-- 添加一个导航项 -->
                     <li><a href="{{ site.git_address }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <!-- 显示GitHub图标，链接到站点的GitHub仓库，使用Font Awesome的GitHub图标 -->
                 </ul>
             </div>
         </div>

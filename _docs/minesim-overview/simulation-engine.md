@@ -1,6 +1,6 @@
 ---
 title: Simulation engine
-permalink: /docs/MineSim-Overview/Simulation-Engine/
+permalink: /docs/minesim-overview/simulation-engine/
 description: none
 ---
 

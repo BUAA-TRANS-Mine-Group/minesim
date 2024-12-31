@@ -1,29 +1,36 @@
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   {% for section in site.data.docs %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}" aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
-            {{ section.title }}
-          </a>
-        </h4>
-      </div>
-      {% assign collapsed = true %}
-      {% for item in section.docs %}
+  <!-- 遍历站点数据中的文档数据（docs），生成每个文档区块的折叠面板。 -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}"
+          aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
+          {{ section.title }}
+        </a>
+      </h4>
+    </div>
+    {% assign collapsed = true %}<!-- 初始化collapsed为true，表示默认折叠状态。 -->
+      {% for item in section.docs %}<!-- 遍历当前section下的docs，检查是否当前页面与文档链接相同，如果相同，设置collapsed为false，展开当前文档。 -->
         {% assign item_url = item | prepend:"/docs/" | append:"/" %}
         {% if item_url == page.url %}
           {% assign collapsed = false %}
         {% endif %}
       {% endfor %}
-      <div class="panel-collapse{% if collapsed %} collapse{% endif %}" id="collapse-{{forloop.index}}" role="tabpanel" aria-label="Side Navigation">
-        <div class="list-group">
-          {% for item in section.docs %}
-            {% assign item_url = item | prepend:"/docs/" | append:"/" %}
-            {% assign p = site.docs | where:"url", item_url | first %}
-            <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | relative_url }}">{{ p.title }}</a>
-          {% endfor %}
-        </div>
+
+    <div class="panel-collapse{% if collapsed %} collapse{% endif %}" id="collapse-{{forloop.index}}" role="tabpanel"
+      aria-label="Side Navigation">
+      <div class="list-group">
+        {% for item in section.docs %}<!-- 遍历文档列表，生成每个文档的链接。 -->
+          {% assign item_url = item | prepend:"/docs/" | append:"/" %}
+          {% assign p = site.docs | where:"url", item_url | first %}
+          <!-- 在 pages 中查找该文档，获取其 URL 和标题。 -->
+          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | relative_url }}">{{
+            p.title }}</a>
+          <!-- 如果当前文档链接与页面的URL匹配，给当前文档链接添加`active`类以高亮显示。 -->
+        {% endfor %}
       </div>
     </div>
+  </div>
   {% endfor %}
 </div>

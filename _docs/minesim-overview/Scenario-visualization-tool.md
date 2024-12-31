@@ -1,6 +1,6 @@
 ---
 title: Scenario visualization tool
-permalink: /docs/MineSim-Overview/Scenario-visualization-tool/
+permalink: /docs/minesim-overview/Scenario-visualization-tool/
 description: none
 ---
  

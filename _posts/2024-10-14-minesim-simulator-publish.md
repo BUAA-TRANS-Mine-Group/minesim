@@ -8,7 +8,7 @@ author: Zhifa Chen
 
 Our work has been submitted to the journal _Accident Analysis and Prevention_
 
-### Title:
+#### Title:
 
 **MineSim: A Scenario-Based Simulation Test System and Benchmark for Autonomous Trucks in Open-Pit Mines.**
 
@@ -30,6 +30,5 @@ Our work has been submitted to the journal _Accident Analysis and Prevention_
 > <br> <sup> \* </sup> Correspondance: cpeng@buaa.edu.cn
 > <br> **Contact us:** chenzhifa@buaa.edu.cn
 
-#### Affiliation:
-
+ 
 **Stay tuned for more updates on our ongoing work!**

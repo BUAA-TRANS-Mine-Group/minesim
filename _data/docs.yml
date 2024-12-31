@@ -1,16 +1,16 @@
 - title: MineSim Overview
   docs:
-    - MineSim-Overview/home-system-design
-    - MineSim-Overview/Simulation-Engine
-    - MineSim-Overview/Metrics-evaluation
-    - MineSim-Overview/Scenario-visualization-tool
+    - minesim-overview/home-system-design
+    - minesim-overview/simulation-engine
+    - minesim-overview/metrics-evaluation
+    - minesim-overview/Scenario-visualization-tool
 
 - title: Scenario Description
   docs:
     - scenario-description/scenario-task-description
-    - scenario-description/HD-map-description
+    - scenario-description/hd-map-description
 
 - title: Benchmarks
   docs:
-    - Benchmarks/Benchmarks-for-dynamic-scenario
-    - Benchmarks/Benchmarks-for-static-scenario
+    - benchmarks/benchmarks-for-dynamic-scenario
+    - benchmarks/benchmarks-for-static-scenario
