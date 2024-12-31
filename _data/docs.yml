@@ -3,10 +3,11 @@
     - minesim-overview/home-system-design
     - minesim-overview/simulation-engine
     - minesim-overview/metrics-evaluation
-    - minesim-overview/Scenario-visualization-tool
+    - minesim-overview/scenario-visualization-tool
 
 - title: Scenario Description
   docs:
+    - scenario-description/data-collection
     - scenario-description/scenario-task-description
     - scenario-description/hd-map-description
 
