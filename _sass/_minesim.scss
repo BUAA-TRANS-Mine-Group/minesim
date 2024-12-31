@@ -42,7 +42,7 @@ body {
 }
  
 // 5. 自定义标题样式
-/* 调整标题的字体大小 */
+/* 调整标题的字体大小：docs and post 相关*/
 .post-content h1, .docs-content h1 {
   font-size: 8rem; /* 更大的标题 */
 }
@@ -59,9 +59,10 @@ body {
   font-size: 4rem; /* 中等大小的标题 */
 }
  
+/* 调整标题的字体大小：custom 相关*/
 h2.custom-title {
-  color: #000000; // 设置文字颜色为白色
-  // font-size: 48px; // 自定义标题字体大小
+  color: #ffffff; // 设置文字颜色为白色
+  font-size: 48px; // 自定义标题字体大小
   font-weight: bold; // 加粗
   text-align: left; // 左对齐
   margin-top: 20px;
